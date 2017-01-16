@@ -1,10 +1,13 @@
 var Gigasecond = function(date) {
-  var moment = date;
 
   Gigasecond.prototype.date = function() {
-    var gigasecond = 10**9
-    moment.setSeconds(moment.getSeconds() + gigasecond)
-    return moment;
+    var moment = new Date(date.valueOf());
+    if (moment.getFullYear() <= 1970) {
+      moment.setHours(moment.getHours() - 1)
+    }
+      var gigasecond = 10**9
+      moment.setSeconds(moment.getSeconds() + gigasecond)
+      return moment;
   }
 };
 
