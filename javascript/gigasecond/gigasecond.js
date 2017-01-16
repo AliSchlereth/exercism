@@ -1,7 +1,7 @@
 var Gigasecond = function(date) {
 
   Gigasecond.prototype.date = function() {
-    var moment = new Date(date.valueOf());
+    var moment = new Date(date);
     if (moment.getFullYear() <= 1970) {
       moment.setHours(moment.getHours() - 1)
     }
