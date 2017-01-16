@@ -6,15 +6,14 @@
 var Bob = function() {};
 
 Bob.prototype.hey = function(input) {
-  // console.log(input.match(/[[A-Z]/))
+  if (!input.match(/\S+/)) {
+    return 'Fine. Be that way!';
+  }
   if (input.toUpperCase() === input && input.match(/[A-Z]/)) {
     return 'Whoa, chill out!';
   }
-  if (input.indexOf("?") >= 0) {
+  if (input.indexOf("?") === input.length - 1) {
     return 'Sure.';
-  }
-  if (input === '') {
-    return 'Fine. Be that way!';
   }
   return 'Whatever.';
 };
