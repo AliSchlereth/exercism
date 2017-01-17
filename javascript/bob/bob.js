@@ -12,7 +12,7 @@ Bob.prototype.hey = function(input) {
   if (input.toUpperCase() === input && input.match(/[A-Z]/)) {
     return 'Whoa, chill out!';
   }
-  if (input.indexOf("?") === input.length - 1) {
+  if (input.endsWith("?")) {
     return 'Sure.';
   }
   return 'Whatever.';
