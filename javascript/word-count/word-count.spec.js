@@ -8,12 +8,12 @@ describe('count()', function() {
     expect(words.count('word')).toEqual(expectedCounts);
   });
 
-  xit('counts one of each word', function() {
+  it('counts one of each word', function() {
     var expectedCounts = { one: 1, of: 1, each: 1 };
     expect(words.count('one of each')).toEqual(expectedCounts);
   });
 
-  xit('counts multiple occurrences of a word', function() {
+  it('counts multiple occurrences of a word', function() {
     var expectedCounts = { one: 1, fish: 4, two: 1, red: 1, blue: 1 };
     expect(words.count('one fish two fish red fish blue fish')).toEqual(expectedCounts);
   });
