@@ -18,22 +18,22 @@ describe('count()', function() {
     expect(words.count('one fish two fish red fish blue fish')).toEqual(expectedCounts);
   });
 
-  xit('handles cramped lists', function() {
+  it('handles cramped lists', function() {
     var expectedCounts = { one: 1, two: 1, three: 1 };
     expect(words.count('one,two,three')).toEqual(expectedCounts);
   });
 
-  xit('ignores punctuation', function() {
+  it('ignores punctuation', function() {
     var expectedCounts = { car: 1, carpet: 1, as: 1, java: 1, javascript: 1 };
     expect(words.count('car : carpet as java: javascript!!&@$%^&')).toEqual(expectedCounts);
   });
 
-  xit('includes numbers', function() {
+  it('includes numbers', function() {
     var expectedCounts = { testing: 2, 1: 1, 2: 1 };
     expect(words.count('testing 1 2 testing')).toEqual(expectedCounts);
   });
 
-  xit('normalizes to lowercase', function() {
+  it('normalizes to lowercase', function() {
     var expectedCounts = { go: 3 };
     expect(words.count('go Go GO')).toEqual(expectedCounts);
   });

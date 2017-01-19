@@ -1,7 +1,8 @@
 var Words = function() {};
 
   Words.prototype.count = function(phrase) {
-    var words = phrase.split(' ');
+    var cleanPhrase = phrase.replace(/[^\w\,\s]/g, '').toLowerCase();
+    var words = cleanPhrase.split(/[ ,]+/);
     var wordCounts = {}
     words.forEach(function(word) {
       if (wordCounts[word]) {
