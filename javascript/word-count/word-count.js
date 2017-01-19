@@ -12,14 +12,14 @@ var Words = function() {};
     if (word.indexOf("'") == 0) {
       word = word.replace(/[']/g, '');
     }
-    return word
+    return word;
   }
 
   var assignCount = function(word, wordCounts) {
     if (wordCounts[word]) {
-      wordCounts[word] += 1
+      wordCounts[word] += 1;
     } else {
-      wordCounts[word] = 1
+      wordCounts[word] = 1;
     }
   }
 
@@ -30,7 +30,7 @@ var Words = function() {};
       word = cleanQuotes(word);
       assignCount(word, wordCounts);
     });
-    return wordCounts
+    return wordCounts;
   }
 
 module.exports = Words
