@@ -1,9 +1,12 @@
 var Words = function() {};
 
   Words.prototype.count = function(phrase) {
-    var cleanPhrase = phrase.replace(/[^\w\,\s\']/g, '').toLowerCase();
+    var cleanPunct = phrase.replace(/[-!$%^&*()_+|~=`{}\[\]:";<>?.¡¿@\/]/g, '')
+    var cleanCase = cleanPunct.toLowerCase();
+    var cleanNewLine = cleanCase.replace(/\r?\n|\t\r/g, " ");
+    var cleanPhrase = cleanNewLine.replace('\t', ' ').trim();
     var words = cleanPhrase.split(/[ ,]+/);
-    var wordCounts = {}
+    var wordCounts = Object.create(null);
     words.forEach(function(word) {
       if (word.indexOf("'") == 0) {
         var word = word.replace(/[']/g, '');
