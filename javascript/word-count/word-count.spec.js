@@ -38,17 +38,17 @@ describe('count()', function() {
     expect(words.count('go Go GO')).toEqual(expectedCounts);
   });
 
-  xit('counts words with apostrophes', function() {
+  it('counts words with apostrophes', function() {
     var expectedCounts = { 'first': 1, 'don\'t': 2, 'laugh': 1, 'then': 1, 'cry': 1 };
     expect(words.count('First: don\'t laugh. Then: don\'t cry.')).toEqual(expectedCounts);
   });
 
-  xit('counts words with quotations', function() {
+  it('counts words with quotations', function() {
     var expectedCounts = { 'joe': 1, 'can\'t': 1, 'tell': 1, 'between': 1, 'large': 2, 'and': 1 };
     expect(words.count('Joe can\'t tell between \'large\' and large.')).toEqual(expectedCounts);
   });
 
-  xit('counts properly international characters', function() {
+  it('counts properly international characters', function() {
     var expectedCounts = { 'hola': 1, 'qué': 1, 'tal': 1, 'привет': 1 };
     expect(words.count('¡Hola! ¿Qué tal? Привет!')).toEqual(expectedCounts);
   });
