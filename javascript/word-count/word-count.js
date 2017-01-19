@@ -1,10 +1,10 @@
 var Words = function() {};
 
   var cleanPhrase = function(phrase) {
-    var cleanPunct = phrase.replace(/[-!$%^&*()_+|~=`{}\[\]:";<>?.¡¿@\/]/g, '');
+    var punct = /[-!$%^&*()_+|~=`{}\[\]:";<>?.¡¿@\/]/g;
+    var cleanPunct = phrase.replace(punct, '');
     var cleanCase = cleanPunct.toLowerCase();
-    var cleanNewLine = cleanCase.replace(/\r?\n|\t\r/g, " ");
-    var cleanWhiteSpace = cleanNewLine.replace('\t', ' ').trim();
+    var cleanWhiteSpace = cleanCase.replace(/\s+/g, " ").trim();
     return cleanWhiteSpace.split(/[ ,]+/);
   }
 
