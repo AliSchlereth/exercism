@@ -7,8 +7,7 @@ Isogram.prototype.isIsogram = function() {
   var chars = [];
   this.phrase.split('').forEach( function(char) {
     if (chars.includes(char)) {
-      isogram = false;
-      return
+      return isogram = false;
     } else {
       chars.push(char);
     }
